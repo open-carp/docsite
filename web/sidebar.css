@@ -1,0 +1,39 @@
+/**
+ * 侧边栏目录树折叠样式（配合 web/sidebar.js）
+ *  - sb-dir：含子列表的目录项；sb-collapsed 表示收起（隐藏子 ul，箭头 ▸）
+ *  - sb-plain：无链接的纯文本目录，整行可点击切换
+ */
+
+.sidebar-nav li.sb-dir {
+  position: relative;
+}
+
+.sidebar-nav li.sb-dir > .sb-toggle {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  width: 14px;
+  font-size: 12px;
+  line-height: 2em;
+  text-align: center;
+  color: #999;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar-nav li.sb-dir > .sb-toggle::before {
+  content: '▾';
+  display: inline-block;
+}
+
+.sidebar-nav li.sb-dir.sb-collapsed > .sb-toggle::before {
+  content: '▸';
+}
+
+.sidebar-nav li.sb-dir.sb-collapsed > ul {
+  display: none;
+}
+
+.sidebar-nav li.sb-plain {
+  cursor: pointer;
+}

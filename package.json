@@ -1,0 +1,11 @@
+{
+  "name": "docsite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "基于 docsify 的文档站点：目录树导航 + 右侧 TOC",
+  "scripts": {
+    "sidebar": "node scripts/gen-sidebar.mjs",
+    "sidebar:watch": "node scripts/gen-sidebar.mjs --watch",
+    "serve": "python3 scripts/serve.py"
+  }
+}

@@ -1,0 +1,42 @@
+/**
+ * 侧边栏宽度拖拽样式（配合 web/resizer.js）
+ *  - --sb-width 由 JS 写在 <html> 上，覆盖主题写死的 300px
+ *  - 手柄固定在视口左缘对应宽度处，宽屏才显示
+ *  - .sb-resizing：拖拽中禁用选中文本、统一光标
+ */
+
+.sb-resizer {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    width: var(--sb-width, 300px);
+  }
+
+  .content {
+    left: var(--sb-width, 300px);
+  }
+
+  .sb-resizer {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    margin-left: -3px;
+    z-index: 30;
+    cursor: col-resize;
+    background: transparent;
+  }
+
+  .sb-resizer:hover,
+  body.sb-resizing .sb-resizer {
+    background: rgba(66, 185, 131, 0.35);
+  }
+}
+
+body.sb-resizing {
+  cursor: col-resize;
+  user-select: none;
+}

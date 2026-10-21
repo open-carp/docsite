@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文档站</title>
+  <meta name="description" content="基于 docsify 的文档站点">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="web/vendor/vue.css">
+  <link rel="stylesheet" href="web/toc.css">
+  <link rel="stylesheet" href="web/sidebar.css">
+  <link rel="stylesheet" href="web/resizer.css">
+</head>
+<body>
+  <div id="app">加载中...</div>
+
+  <script>
+    window.$docsify = {
+      name: '文档站',
+      basePath: './docs',
+      loadSidebar: true,
+      // 任意层级的 _sidebar.md 请求都映射到根目录，避免子目录探测 404
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      relativePath: true,
+    };
+  </script>
+  <script src="web/toc.js"></script>
+  <script src="web/sidebar.js"></script>
+  <script src="web/resizer.js"></script>
+  <script src="web/vendor/docsify.min.js"></script>
+</body>
+</html>
